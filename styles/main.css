@@ -22,6 +22,16 @@
   background-color: var(--grey);
 }
 
+.main__header {
+  position: sticky;
+  top: 0;
+  min-height: 80px;
+  background-color: white;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
 .main__top-background {
   min-height: 40vh;
   min-width: 100%;
@@ -31,11 +41,25 @@
 .main__wrapper {
   position: fixed;
   inset: 0;
-  display: grid;
-  place-items: center;
+  top: 100px;
+  left: calc((100% - 600px) / 2)
 }
 
-.wrapper__card {
+.wrapper__scroller {
+  max-width: 600px;
+  height: 100%;
+  margin: auto 0;
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow: scroll;
+}
+
+.wrapper__scroller > * {
+  flex-basis: calc(50% - 20px);
+}
+
+.scroller__card {
   background-color: var(--dark-grey);
   color: white;
   border-radius: 10px;
