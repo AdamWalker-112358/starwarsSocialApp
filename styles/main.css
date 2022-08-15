@@ -106,7 +106,7 @@
 
 }
 
-.social__stat--active {
+.social__stat--active:hover {
   background-color: var(--active-blue);
 }
 
