@@ -42,21 +42,45 @@
   position: fixed;
   inset: 0;
   top: 100px;
-  left: calc((100% - 600px) / 2)
 }
 
 .wrapper__scroller {
-  max-width: 600px;
+  /* max-width: 600px; */
   height: 100%;
   margin: auto 0;
+  padding-bottom: calc(100vh - 160px);
   display: flex; 
   flex-wrap: wrap;
   gap: 20px;
   overflow: scroll;
+  justify-content: center;
 }
 
 .wrapper__scroller > * {
-  flex-basis: calc(50% - 20px);
+  flex-basis: calc(100% - 20px);
+}
+
+.divider-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  flex-basis: 600px;
+
+}
+
+.divider-section > * {
+  flex-basis: calc(50% - 15px)
+}
+
+.divider {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  padding: 20px;
+  background-color: rgb(182, 10, 197);
+  border-radius: 5px;
+  color: white;
 }
 
 .scroller__card {
@@ -85,6 +109,27 @@
   width: 100px;
 }
 
+.image__container {
+  position: relative;
+}
+
+
+.image__container::after {
+  content: '3';
+  background-color: red;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  position: absolute;
+  right: -5px;
+  bottom: 10px;
+
+}
 
 .card__title h3 {
   font-size: 1rem;
@@ -94,6 +139,7 @@
 
 .card__social {
   display: flex;
+  align-self: stretch;
 }
 
 .social__stat {
